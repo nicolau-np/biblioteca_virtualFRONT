@@ -4,9 +4,10 @@ import axios from 'axios'
 const LeitorList = ()=> {
 
     const [leitors, setLeitors] = useState([])
+    const url_path = "http://localhost:8000"
 
     useEffect(()=>{
-        axios.get('http://localhost:8000/api/leitors').
+        axios.get("http://localhost:8000/api/leitors").
         then((response)=>{
             console.log(response.data.data)
             setLeitors(response.data.data)
@@ -18,12 +19,19 @@ const LeitorList = ()=> {
     <div>
       <h3>Lista de Leitores</h3><br/> 
 
-        <div className="card">
-            <img src="none.jpg" alt="" style={{width:'200px', height:'130px'}}/>
-            <div className="description">
-               Hello world
+
+        {leitors.map(leitor=>(
+            <div className="card">
+                <img src={url_path+"/"+leitor.pessoa.foto} alt="" style={{width:'200px', height:'130px'}}/>
+                <div className="description">
+                    Nome: {leitor.pessoa.nome}<br/>
+                    Telefone: {leitor.telefone}<br/>
+                    Bairro: {leitor.bairro}<br/>
+                <hr/>
+                </div>
             </div>
-        </div>
+        ))}
+        
 
     </div>
     )
