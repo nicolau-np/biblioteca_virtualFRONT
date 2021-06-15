@@ -14,8 +14,15 @@ const LeitorForm = () => {
     const [bairro, setBairro] = useState("")
 
 
-    const submit=()=>{
-        
+   async const submit=()=>{
+        const formData = new FormData()
+        formData.append('nome', nome)
+        formData.append('genero', genero)
+        formData.append('bi', bi)
+        formData.append('foto', foto)
+
+        formData.append('telefone', telefone)
+        formData.append('bairro', bairro)
     }
 
     return (
