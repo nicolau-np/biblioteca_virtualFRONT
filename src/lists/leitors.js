@@ -21,14 +21,16 @@ const LeitorList = ()=> {
 
 
         {leitors.map(leitor=>(
+            <div>
+            <hr/>
             <div className="card">
                 <img src={url_path+"/"+leitor.pessoa.foto} alt="" style={{width:'200px', height:'130px'}}/>
                 <div className="description">
                     Nome: {leitor.pessoa.nome}<br/>
                     Telefone: {leitor.telefone}<br/>
                     Bairro: {leitor.bairro}<br/>
-                <hr/>
                 </div>
+            </div>
             </div>
         ))}
         
