@@ -35,7 +35,7 @@ const LeitorForm = () => {
     return (
         <div>
             <h3>Formulario de Cadastro de Leitor</h3>
-            <form method="POST">
+            <form>
                
                <input type="text" name="nome" required="required" placeholder="Nome" 
                onChange={(e)=>setNome(e.target.value)}
