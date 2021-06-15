@@ -1,12 +1,12 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 
 const Contador = ()=> {
 
-    const [count, setCount] = useState(0);
-    const [status, setStatus] = useState('');
+    const [count, setCount] = useState(0)
+    const [status, setStatus] = useState('')
 
     const increment=()=>{
-        if(count==30){
+        if(count===30){
             setStatus("Chegou o fim da contagem")
         }else{
            console.log("click em aumentar")
@@ -17,11 +17,11 @@ const Contador = ()=> {
 
     return (
         <div>
-            <h3>Contador: {count}%</h3><br/>
+            <h3>Contador: {count}%</h3>
             <span style={{color:'red'}}>{status}</span><br/> 
             <button type="button" onClick={increment}>Aumentar</button>
         </div>    
-    );
+    )
 }
 
-export default Contador;
+export default Contador
