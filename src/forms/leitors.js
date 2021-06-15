@@ -14,15 +14,21 @@ const LeitorForm = () => {
     const [bairro, setBairro] = useState("")
 
 
-   async const submit=()=>{
+   async function submit(){
         const formData = new FormData()
         formData.append('nome', nome)
         formData.append('genero', genero)
         formData.append('bi', bi)
         formData.append('foto', foto)
+        formData.append('estado', estado)
 
         formData.append('telefone', telefone)
         formData.append('bairro', bairro)
+
+        let result = await fetch('http://localhost:8000/api/leitors/store',{
+            method:'POST',
+            body: formData
+        })
     }
 
     return (
