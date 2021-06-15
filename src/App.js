@@ -4,7 +4,7 @@ import Contador from './components_example/Contador'
 function App() {
   return (
     <div className="App">
-     <h1>Nosso Contador</h1> 
+     <h1>Biblioteca Virtual</h1> 
       <Contador/>
     </div>
   );
