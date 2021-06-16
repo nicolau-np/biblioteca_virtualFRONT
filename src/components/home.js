@@ -5,10 +5,16 @@ import Menu from './../include/menu'
 
 
 const Content = () => {
+
+    const contentStyle = {
+        backgroundColor: 'yellow'
+    }
+
     return ( 
-    <Fragment>
+    <div style={contentStyle}>
             <h2>Home</h2>
-    </Fragment> 
+            <h4>Conteudo da pagina home</h4>
+    </div> 
     );
 }
  
@@ -19,6 +25,7 @@ const Home = () => {
         <Fragment>
             <Header/>
             <Menu/>
+            <Content/>
             <Footer/>
         </Fragment>
     );
