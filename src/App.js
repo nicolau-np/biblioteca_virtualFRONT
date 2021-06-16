@@ -3,17 +3,19 @@ import React from 'react'
 import {BrowserRouter, Route, Routes } from 'react-router-dom'
 
 import Error404 from './errors/e404'
+import Home from './components/home'
 
 function App() {
   return (
     <div className="App">
-        <BrowserRouter>
+       {/* <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home/>}/>
-          <Route path="*" element={<Error404/>}/>
+            <Route path="*" element={<Error404/>}/>
           </Routes>
   
-        </BrowserRouter>
+        </BrowserRouter>*/} 
+        <Home/>
     </div>
   );
 }
