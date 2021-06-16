@@ -7,14 +7,13 @@ import Home from './components/home'
 function App() {
   return (
     <div className="App">
-       {/* <BrowserRouter>
+        <BrowserRouter>
           <Routes>
             <Route exact path="/" element={<Home/>}/>
             <Route path="*" element={<Error404/>}/>
           </Routes>
   
-        </BrowserRouter>*/} 
-        <Home/>
+        </BrowserRouter>
     </div>
   );
 }
