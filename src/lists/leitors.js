@@ -5,6 +5,7 @@ const LeitorList = ()=> {
 
     const [leitors, setLeitors] = useState([])
     const url_path = "http://localhost:8000"
+    const url_path2 = "http://localhost:8000/assets/img"
 
     useEffect(()=>{
         axios.get("http://localhost:8000/api/leitors").
@@ -24,11 +25,21 @@ const LeitorList = ()=> {
             <div>
             <hr/>
             <div className="card">
-                <img src={url_path+"/"+leitor.pessoa.foto} alt="" style={{width:'200px', height:'130px'}}/>
+                <img src={
+                    leitor.pessoa.foto === null ? url_path2+"/"+'photo none.png' : 
+                    url_path+"/"+leitor.pessoa.foto
+                    
+                    } alt={ 
+                    leitor.pessoa.foto === null ? url_path2+"/"+'photo none.png' : 
+                    url_path+"/"+leitor.pessoa.foto
+                    } style={{width:'200px', height:'130px'}}/>
                 <div className="description">
                     Nome: {leitor.pessoa.nome}<br/>
+                    Gênero: {leitor.pessoa.genero}<br/>
                     Telefone: {leitor.telefone}<br/>
                     Bairro: {leitor.bairro}<br/>
+                    Bilhete: {leitor.pessoa.bi}<br/>
+
                 </div>
             </div>
             </div>
