@@ -2,9 +2,7 @@
 import React from 'react'
 import {BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Contador from './components_example/Contador'
-import FormLeitor from './forms/leitors'
-import ListLeitor from './lists/leitors'
+import Error404 from './errors/e404'
 
 function App() {
   return (
