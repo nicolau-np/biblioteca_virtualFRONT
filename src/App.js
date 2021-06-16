@@ -1,13 +1,22 @@
 
 import React from 'react'
+import {BrowserRouter, Route, Routes } from 'react-router-dom'
+
 import Contador from './components_example/Contador'
 import FormLeitor from './forms/leitors'
 import ListLeitor from './lists/leitors'
 function App() {
   return (
     <div className="App">
-     <h1>Biblioteca Virtual</h1> 
-      <ListLeitor/>
+        <BrowserRouter>
+          <Routes>
+            <Route exact path="/" element={<Home/>}/>
+            <Route exact path="/login" element={<Login/>}/>
+            <Route exact path="/funcionarios" element={<ListFunc/>}/>
+          <Route path="*" element={<Error404/>}/>
+          </Routes>
+  
+        </BrowserRouter>
     </div>
   );
 }
