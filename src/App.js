@@ -1,19 +1,11 @@
 import React from 'react'
-import {BrowserRouter, Route, Routes } from 'react-router-dom'
 
-import Error404 from './errors/e404'
-import Home from './components/home'
+import Routes from './web/routes'
 
 function App() {
   return (
-    <div className="App">
-        <BrowserRouter>
-          <Routes>
-            <Route exact path="/" element={<Home/>}/>
-            <Route path="*" element={<Error404/>}/>
-          </Routes>
-  
-        </BrowserRouter>
+    <div>
+       <Routes/>
     </div>
   );
 }
