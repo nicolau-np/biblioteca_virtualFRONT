@@ -12,8 +12,8 @@ const Content = () => {
 
     return ( 
     <div style={contentStyle}>
-            <h2>Home</h2>
-            <h4>Conteudo da pagina home</h4>
+            <h2>Sobre</h2>
+            <h4>Conteudo da pagina sobre</h4>
     </div> 
     );
 }
