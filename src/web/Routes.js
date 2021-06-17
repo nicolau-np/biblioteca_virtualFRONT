@@ -4,7 +4,7 @@ import {Switch, Route} from 'react-router-dom'
 import Home from '../components/home'
 import Sobre from '../components/sobre'
 
-export default ()=>{
+ const Routes=()=>{
     return (
         <Switch>
             <Route exact path="/" component={Home}/>
@@ -12,4 +12,6 @@ export default ()=>{
         </Switch>
     );
 }
+
+export default Routes
 
