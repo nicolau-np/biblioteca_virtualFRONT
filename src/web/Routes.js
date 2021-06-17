@@ -1,6 +1,7 @@
 import React from 'react'
 import {Switch, Route} from 'react-router-dom'
 
+import Login from '../components/login'
 import Home from './../components/home'
 import Sobre from './../components/sobre'
 import Error404 from './../errors/e404'
@@ -9,6 +10,7 @@ import Error404 from './../errors/e404'
     return (
         <Switch>
             <Route exact path="/" component={Home}/>
+            <Route exact path="/login" component={Login}/>
             <Route exact path="/sobre" component={Sobre}/>
             <Route path="*" component={Error404}/>
         </Switch>
