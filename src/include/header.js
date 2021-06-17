@@ -2,9 +2,9 @@ import React from 'react'
 
 const Header = () => {
     return ( 
-    <div>
+    <div className="container">
         <div className="header">
-            fndsnhlfs
+            
         </div>
     </div> 
     );

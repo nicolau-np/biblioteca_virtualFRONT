@@ -1,4 +1,10 @@
+.container{
+    display: block;
+    width:100%;
+}
 .header{
-    background-color: yellow;
-    height: 400px;
+    height: 40px;
+    border: 1px solid #ccc;
+    margin-left: 10%;
+    margin-right: 10%;
 }
