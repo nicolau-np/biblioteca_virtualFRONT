@@ -1,9 +1,13 @@
 import React from 'react'
 
 const Header = () => {
-    return ( <div>
-        <h2>Header</h2>
-    </div> );
+    return ( 
+    <div>
+        <div className="header">
+            fndsnhlfs
+        </div>
+    </div> 
+    );
 }
  
 export default Header;
