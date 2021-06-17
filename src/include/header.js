@@ -5,6 +5,17 @@ const Header = () => {
     <div className="container">
         <div className="header">
             
+            <div className="logo">
+                <h1>Biblioteca Virtual</h1>
+            </div>
+
+            <div className="menu">
+                <ul>
+                    <li>Home</li>
+                    <li>Autores</li>
+                    <li>Sobre</li>
+                </ul>
+            </div>
         </div>
     </div> 
     );

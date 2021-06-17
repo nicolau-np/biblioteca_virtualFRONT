@@ -1,10 +1,21 @@
 .container{
-    display: block;
     width:100%;
 }
 .header{
-    height: 40px;
+    width: 80%;
+    height: 60px;
     border: 1px solid #ccc;
     margin-left: 10%;
     margin-right: 10%;
+    display:block;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 10px;
+    float: right;
+}
+
+.logo{
+    float: left;
 }
