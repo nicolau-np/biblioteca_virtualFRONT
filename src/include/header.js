@@ -4,16 +4,16 @@ const Header = () => {
     return ( 
     <div className="container">
         <div className="header">
-            
+
             <div className="logo">
                 <h1>Biblioteca Virtual</h1>
             </div>
 
             <div className="menu">
                 <ul>
-                    <li>Home</li>
-                    <li>Autores</li>
-                    <li>Sobre</li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/autores">Autores</a></li>
+                    <li><a href="/sobre">Sobre</a></li>
                 </ul>
             </div>
         </div>
