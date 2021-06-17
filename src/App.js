@@ -1,12 +1,19 @@
 import React from 'react'
+import {BrowserRouter} from 'react-router-dom'
+import Routes from './web/Routes'
 
-import Routes from './web/routes'
+import Header from './include/header'
+import Footer from './include/footer'
+import Menu from './include/menu'
 
 function App() {
   return (
-    <div>
-       <Routes/>
-    </div>
+    <BrowserRouter>
+        <Header/>
+        <Menu/>
+        <Routes/>
+        <Footer/>
+    </BrowserRouter>
   );
 }
 
