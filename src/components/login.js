@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import api_token from './../services/api_token'
+import api from './../services/api'
 
 const Login = () => {
 
@@ -13,7 +13,7 @@ const Login = () => {
 
             const response = await api.post('users/login', formData)
             .then(resp=>{
-                console.log('logado com sucesso')
+                console.log(resp)
             })
             .catch(error=>{
                 console.log(error)
