@@ -11,11 +11,10 @@ const Login = () => {
         formData.append('email', email)
         formData.append('password', password)
 
-            const response = await api.post('users/login', formData)
+            const response = api.post('users/login', formData)
             .then(resp=>{
-                console.log(resp)
-            })
-            .catch(error=>{
+                console.log(resp.data)
+            }).catch(error=>{
                 console.log(error)
             })
           
