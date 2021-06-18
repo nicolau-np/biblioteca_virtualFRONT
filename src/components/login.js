@@ -1,29 +1,36 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import api from './../services/api'
+import axios from 'axios'
+import React, { Fragment, useState} from 'react'
+import {useHistory} from 'react-router-dom'
+
 
 const Login = () => {
 
     const [email, setEmail] = useState([])
     const [password, setPassword] = useState([])
+    const history = useHistory()
 
-    function submit(){
-        const formData = new FormData()
-        formData.append('email', email)
-        formData.append('password', password)
-
-            const response = api.post('users/login', formData)
-            .then(resp=>{
-                console.log(resp.data)
-            }).catch(error=>{
-                console.log(error)
-            })
-          
+     async function submit(ev){
+       ev.preventDefault();
+      const response = await axios.post('http://127.0.0.1:8000/api/users/login', {
+           email, 
+           password
+       }).then((response)=>{
+            history.push('/')
+            console.log(response.data)
+       }).catch((error)=> {
+           if(error.data.status === 'Unauthorized'){
+                alert('Erro no usuario ou palavra passe')
+           }else{
+                alert('Deve preencher os campos obrigatorios')
+           }
+       })
+     
     }
 
     return (  
         <Fragment>
             
-            <form>
+            <form onSubmit={submit}>
                 <input type="email" name="email" 
                 onChange={(e)=>setEmail(e.target.value)}
                 value={email}
@@ -32,7 +39,7 @@ const Login = () => {
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}
                 required/><br/>
-                <button type="button" onClick={submit}>Entrar</button>
+                <button type="submit">Entrar</button>
             </form>
             
          </Fragment>
