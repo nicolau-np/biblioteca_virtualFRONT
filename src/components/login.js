@@ -22,6 +22,7 @@ const Login = () => {
 
     return (  
         <Fragment>
+            
             <form>
                 <input type="email" name="email" 
                 onChange={(e)=>setEmail(e.target.value)}
@@ -33,7 +34,8 @@ const Login = () => {
                 required/><br/>
                 <button type="button" onClick={submit}>Entrar</button>
             </form>
-        </Fragment>
+            
+         </Fragment>
     );
 }
  
