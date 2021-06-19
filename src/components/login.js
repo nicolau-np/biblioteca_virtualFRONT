@@ -16,13 +16,13 @@ const Login = () => {
            password
        }).then((response)=>{
             history.push('/')
-            console.log(response.data)
        }).catch((error)=> {
-           if(error.data.status === 'Unauthorized'){
+           {/*if(error.data.status === 'Unauthorized'){
                 alert('Erro no usuario ou palavra passe')
            }else{
                 alert('Deve preencher os campos obrigatorios')
-           }
+           }*/}
+           
        })
      
     }
