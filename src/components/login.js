@@ -1,5 +1,4 @@
-import axios from 'axios'
-import React, { Fragment, useState} from 'react'
+import React, { SyntheticEvent, Fragment, useState} from 'react'
 import {useHistory} from 'react-router-dom'
 
 
@@ -9,23 +8,14 @@ const Login = () => {
     const [password, setPassword] = useState([])
     const history = useHistory()
 
-     async function submit(ev){
-       ev.preventDefault();
-      const response = await axios.post('http://127.0.0.1:8000/api/users/login', {
-           email, 
-           password
-       }).then((response)=>{
-            history.push('/')
-       }).catch((error)=> {
-           {/*if(error.data.status === 'Unauthorized'){
-                alert('Erro no usuario ou palavra passe')
-           }else{
-                alert('Deve preencher os campos obrigatorios')
-           }*/}
-           
-       })
-     
-    }
+     const submit = async () => {
+        e.preventDefault()
+
+        const response = await fetch('http:/localhost:8000/api/users/login', {
+            
+        })
+        
+     }
 
     return (  
         <Fragment>
