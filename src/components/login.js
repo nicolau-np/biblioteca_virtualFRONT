@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, Fragment, useState} from 'react'
+import React, { SyntheticEvent, Fragment, useState, Redirect} from 'react'
 import {useHistory} from 'react-router-dom'
 
 
@@ -15,6 +15,7 @@ const Login = () => {
         const response = await fetch('http://127.0.0.1:8000/api/users/login', {
             method: 'POST',
             headers: {'Content-Type':'application/json'},
+            
             body: JSON.stringify({
                 email,
                 password,
@@ -25,13 +26,17 @@ const Login = () => {
         if(content.status === "Unauthorized"){
             setStatus(content.data)
         }else if(content.status === "ok"){
-           {/*history.push('/')*/} 
-           setStatus(content.data)
+           history.push('/') 
            console.log(content)
         }
         
         console.log(content.status)
      }
+
+
+     {/*if(redirect){
+         return <Redirect to="/"/>;
+     }*/}
 
     return (  
         <Fragment>
