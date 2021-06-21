@@ -23,9 +23,11 @@ const Login = () => {
 
         const content = await response.json()
         if(content.status === "Unauthorized"){
-            setStatus(content.data);
+            setStatus(content.data)
         }else if(content.status === "ok"){
-           history.push('/') 
+           {/*history.push('/')*/} 
+           setStatus(content.data)
+           console.log(content)
         }
         
         console.log(content.status)
