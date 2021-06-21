@@ -4,6 +4,10 @@ import {useHistory} from 'react-router-dom'
 
 const Home = () => {
     const history = useHistory()
+    const [nome, setNome] = useState('')
+    const [foto, setFoto] = useState('')
+    const [acesso, setAcesso] = useState('')
+
 
     useEffect(() => {
         me();
@@ -21,16 +25,24 @@ const Home = () => {
         const content = await response.json()
         if(content.status ==="error"){
             history.push('/login') 
+        }else{
+            setNome(content.data.pessoa.nome)
+            setFoto(content.data.pessoa.foto)
+            setAcesso(content.data.acesso)
         }
-        console.log(content)
+        console.log(content.data)
     }
 
     return (  
         <Fragment>
-            <br/><br/><br/>
-            <h2>Home</h2>
-            <h4>Conteudo da pagina home</h4>
-             
+            <br/><br/><br/><br/>
+            <h2>Seja Bem vindo {nome}</h2><br/>
+            <img src={
+            foto===null ? 'http://127.0.0.1:8000/assets/img/photo none.png' : 
+            'http://127.0.0.1:8000/'+foto} 
+            style={{height:"100px", width:"100px"}} alt="Foto de Perfil"/><br/>
+
+            Nivel de Acesso: {acesso}
         </Fragment>
     );
 }
