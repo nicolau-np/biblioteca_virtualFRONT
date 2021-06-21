@@ -27,7 +27,7 @@ const Login = () => {
             setStatus(content.data)
         }else if(content.status === "ok"){
            history.push('/') 
-           
+           window.localStorage.setItem('token', content.access_token)
            console.log(content)
         }
         

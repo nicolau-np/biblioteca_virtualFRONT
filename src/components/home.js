@@ -16,10 +16,10 @@ const Home = () => {
                'Content-Type':'application/json',
                Authorization: 'bearer ' + window.localStorage.getItem('token')
             },
-        })
+    })
 
         const content = await response.json()
-        if(response.status ==="error"){
+        if(content.status ==="error"){
             history.push('/login') 
         }
         console.log(content)
