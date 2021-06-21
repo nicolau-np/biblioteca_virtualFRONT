@@ -6,19 +6,39 @@ const Login = () => {
 
     const [email, setEmail] = useState([])
     const [password, setPassword] = useState([])
+    const [status, setStatus] = useState([])
     const history = useHistory()
 
-     const submit = async () => {
+     const submit = async (e) => {
         e.preventDefault()
 
-        const response = await fetch('http:/localhost:8000/api/users/login', {
-            
+        const response = await fetch('http://127.0.0.1:8000/api/users/login', {
+            method: 'POST',
+            headers: {'Content-Type':'application/json'},
+            body: JSON.stringify({
+                email,
+                password,
+            })
         })
+
+        const content = await response.json()
+        if(content.status === "Unauthorized"){
+            setStatus(content.data);
+        }else if(content.status === "ok"){
+           history.push('/') 
+        }
         
+        console.log(content.status)
      }
 
     return (  
         <Fragment>
+            <br/>
+            <br/>
+            <br/>
+            <div style={{color:"red"}}>
+               {status} 
+            </div>
             
             <form onSubmit={submit}>
                 <input type="email" name="email" 
