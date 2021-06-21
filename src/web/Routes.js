@@ -7,7 +7,7 @@ import Register from './../components/register'
 import Sobre from './../components/sobre'
 import Error404 from './../errors/e404'
 
- const Routes=()=>{
+ const Routes = () =>{
     return (
         <Switch>
             <Route exact path="/" component={Home}/>
