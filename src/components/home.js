@@ -27,6 +27,7 @@ const Home = () => {
 
     return (  
         <Fragment>
+            <br/><br/><br/>
             <h2>Home</h2>
             <h4>Conteudo da pagina home</h4>
              
