@@ -1,6 +1,9 @@
 import React, {useState, useEffect, Fragment } from 'react'
+import {useHistory} from 'react-router-dom'
+
 
 const Home = () => {
+    const history = useHistory()
 
     useEffect(() => {
         me();
@@ -9,11 +12,17 @@ const Home = () => {
 
     const me  = async () => {
         const response = await fetch('http://127.0.0.1:8000/api/users/me', {
-                headers: {'Content-Type':'application/json'},
-                credentials: 'include'
+            headers: {
+               'Content-Type':'application/json',
+               Authorization: 'bearer ' + window.localStorage.getItem('token')
+            },
         })
 
         const content = await response.json()
+        if(response.status ==="error"){
+            history.push('/login') 
+        }
+        console.log(content)
     }
 
     return (  

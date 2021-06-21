@@ -27,6 +27,7 @@ const Login = () => {
             setStatus(content.data)
         }else if(content.status === "ok"){
            history.push('/') 
+           
            console.log(content)
         }
         
