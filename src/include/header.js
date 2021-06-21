@@ -28,6 +28,7 @@ const Header = () => {
                     <li><Link to="/autores">Autores</Link></li>
                     <li><Link to="/login">Login</Link></li>
                     <li><Link to="/login" onClick={logout}>Logout</Link></li>
+                    <li><Link to="/register">Register</Link></li>
                     <li><Link to="/sobre">Sobre</Link></li>
                 </ul>
             </div>
