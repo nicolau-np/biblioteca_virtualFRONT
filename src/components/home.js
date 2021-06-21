@@ -15,7 +15,7 @@ const Home = () => {
             headers: {
                'Content-Type':'application/json',
                Authorization: 'bearer ' + window.localStorage.getItem('token')
-            },
+            }
     })
 
         const content = await response.json()

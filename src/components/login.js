@@ -9,6 +9,27 @@ const Login = () => {
     const [status, setStatus] = useState([])
     const history = useHistory()
 
+
+    useEffect(() => {
+        me();
+    }, []);
+
+    const me = async () => {
+        const response = await fetch('http://127.0.0.1:8000/api/users/me', {
+            headers: {
+               'Content-Type':'application/json',
+               Authorization: 'bearer ' + window.localStorage.getItem('token')
+            }
+        })
+
+        const content = await response.json()
+        if(content.status === "error"){
+
+        }else{
+            history.push('/')
+        }
+    }
+    
      const submit = async (e) => {
         e.preventDefault()
 
