@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, Fragment, useState, Redirect} from 'react'
+import React, {Fragment, useState, useEffect} from 'react'
 import {useHistory} from 'react-router-dom'
 
 
