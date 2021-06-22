@@ -5,6 +5,8 @@ import Login from '../components/login'
 import Home from './../components/home'
 import Register from './../components/register'
 import Sobre from './../components/sobre'
+import LeitorForm from './../forms/leitors'
+
 import Error404 from './../errors/e404'
 
  const Routes = () =>{
@@ -14,6 +16,7 @@ import Error404 from './../errors/e404'
             <Route exact path="/login" component={Login}/>
             <Route exact path="/register" component={Register}/>
             <Route exact path="/sobre" component={Sobre}/>
+            <Route exact path="/leitor" component={LeitorForm}/>
             <Route path="*" component={Error404}/>
         </Switch>
     );
