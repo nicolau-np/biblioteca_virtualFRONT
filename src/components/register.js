@@ -1,4 +1,5 @@
 import { Fragment, useState, useEffect } from "react";
+import {useHistory} from 'react-router-dom'
 
 const Register = () => {
     const [nome, setNome] = useState('')
@@ -11,11 +12,34 @@ const Register = () => {
     const [estadoU, setEstadoU] = useState('on')
     const [status, setStatus] = useState('')
     const [stay, setStay] = useState(false)
+    const history = useHistory()
+
 
 
     useEffect(() => {
+        me()
         middlewareAdmin()
     }, [])
+
+
+    const me  = async () => {
+        const response = await fetch('http://127.0.0.1:8000/api/users/me', {
+            headers: {
+               'Content-Type':'application/json',
+               Authorization: 'bearer ' + window.localStorage.getItem('token')
+            }
+    })
+
+        const content = await response.json()
+        if(content.status ==="error"){
+            history.push('/login') 
+        }else{
+            setNome(content.data.pessoa.nome)
+            setFoto(content.data.pessoa.foto)
+            setAcesso(content.data.acesso)
+        }
+        console.log(content.data)
+    }
 
     const middlewareAdmin = async () =>{
         const response = await fetch('http://127.0.0.1:8000/api/admin', {
