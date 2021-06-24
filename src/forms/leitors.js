@@ -16,6 +16,7 @@ const LeitorForm = () => {
 
 
    async function submit(){
+       
         const formData = new FormData()
         formData.append('nome', nome)
         formData.append('genero', genero)

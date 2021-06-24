@@ -1,4 +1,4 @@
-import { Fragment, useState, useEffect } from "react";
+import React, { Fragment, useState, useEffect } from "react";
 import {useHistory} from 'react-router-dom'
 
 const Register = () => {
@@ -15,7 +15,8 @@ const Register = () => {
     const history = useHistory()
 
 
-
+  
+ 
     useEffect(() => {
         me()
         middlewareAdmin()
