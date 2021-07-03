@@ -35,17 +35,7 @@ const Home = () => {
 
     return (  
         <Fragment>
-            <div className="row">
-                <div className="col-md-4">
-                    hello1
-                </div>
-                <div className="col-md-4">
-                    hello2
-                </div>
-                <div className="col-md-4">
-                    hello3
-                </div>
-            </div>
+            
             <br/><br/><br/><br/>
             <h2>Seja Bem vindo {nome}</h2><br/>
             <img src={
